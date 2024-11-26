@@ -1,15 +1,105 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>RRandP</title>
+        <title>RR&P</title>
+        <style>
+            body {
+                font-family: sans-serif; background-color:#008080;border: 2px dotted black;
+                padding:10px 10px 10px 10px; color:white
+                }
+
+            nav {
+                background-color:#DAA520
+
+                }
+            h2 {
+             border: 2px dotted gold;
+                padding:15px 15px 15px 15px;   
+                }
+        </style>
     </head>
     <body>
-        <h1>This page contains information on Routers, Redundancy, and Packets</h1>
+<header>
+    <h1>Understanding Routers, Redundancy, and Packets</h1>
+        <nav>
+        <ul>
+        <li><a href="#routers"><p>routers</p></a></li>
+        <li><a href="#redundancy"><p>redundancy</p></li>
+        <li><a href="#packets"><p>packets</p></li>    
+            </ul>
+        </nav>
+</header>
         <br><br><br>
         <a href= "https://aayao1.github.io/Internet/">
             <button>Home</button>
             </a>
-        <br><br><br>
+        <a href="Internet.html">
+            <button>Internet</button>
+        </a>
+        <a href="HTTPandDNS.html">
+            <button>HTTP&DNS</button>
+        </a>
+        <br><br><br> 
+        
+        <section id="routers"> 
+            
+        <h2>What is a Router?</h2>
+        <p>A router is a device that forwards data packets between computer networks, ensuring that data travels across the appropriate paths to reach its destination. This device is a data traffic control manager as it connects multiple networks and directs data traffic to ensure efficient communication - whether you're at home, school, work, or another larger setup.</p>    
+        <h3>How WiFi Routers Work</h3>
+        <p>Since WiFi is a big part of our lives, why not understand how a WiFi router works? Overall, there are 3 main steps.</p>
+        <h3>1. Connects to the internet </h3>
+        <p>A WiFi router typically connects to your ISP (internet service provider) via a modem, which receives internet signal from the ISP. The modem sends the connection to your router.</p>
+        <img src="rr&p1.jpeg">
+        <h3>2. Routes data </h3>
+        <p>After receiving the connection from the modem, the WiFi router performs the same routing function as a regular router - it directs data packets to the correct device using IP addresses.</p>
+        <img src="rr&p2.png">
+        <h3>3. Transmits data wirelessly</h3>
+        <p>WiFi routers transmit and receive data using radio waves (wireless), which allows wireless communication between the router and the WiFi - enabled devices. The router has antennas built on specific frequencies and devices like smartphones and laptops have built-in wireless network adapters that communicate with the router using these frequencies.</p>
         <img src="router.jpeg">
+            
+    </section>
+        <br><br><br><br>
+
+    <section id="redundancy">
+        <h2>Network Path Redundancy</h2>
+        <p>Network path redundancy ensures that a network remains functioning even when certain devices or paths fail. It's a key strategy for improving the reliability and fault tolerance of a network and is achieved by implementing backup systems that take over in case of failure.</p>
+        <h3>Key aspects of redundancy:</h3>
+        <ul>
+            <li>MULTIPLE PATHS. Redundancy often involves creating multiple paths for data to travel. If one path fails (could be from physical link failures, configuration problems, etc.), the network can reroute traffic through another, ensuring that data still reaches its destination (may be out of order, lost, etc.).</li>
+        <img src= "rr&p3.jpg" width=30% height=20%>
+            <br><br>
+           <li>LOAD BALANCING. Instead of only using one backup path when the primary path fails, network path redundancy can also involve load balancing. This distributes network traffic across multiple paths to optimize performance and prevent congestion.</li>
+        </ul>
+    </section>
+        <br><br><br><br>
+
+    <section id="packets">
+       <h2>Understanding Packets</h2>
+        <p>Finally, you might already have an idea of what packets are (they were previously mentioned in the other sections). Packets are small units of data that are transmitted over a network - whether it was sent by the router or being rerouted through the path redundancy technique. Here's a more detailed explanation of how packets work in the internet:</p>
+        <h3>1. What Are Packets?</h3>
+        <ul>
+        <li>In other words, a packet is a chunk of data that includes not only the actual data being transmitted but also essential information needed for routing and delivery.</li>
+        <br>
+        <li>The data in a packet is typically part of a larger message or file being sent across a network, such as a webpage, video, or email attachment.</li>
+        <br>
+        <li>They are the basic blocks of communication on the internet and follow a structured format defined by various protocols such as the TCP, UDP, IP, and HTTP (we will discuss this on the other page)</li>
+        <img src="rr&p4.png">
+        </ul>
+        <h3>2. Structure of a Packet</h3>
+        <p>Packets typically consist of three parts:</p>
+        <ul>
+            <li><strong>Header:</strong> contains routing information (e.g., source and destination IP address)</li>
+            <br>
+            <li><strong>Payload (Data):</strong> the actual data being transmitted, which could be part of a file, text, or other content</li>
+            <br>
+            <li><strong>Footer (optional):</strong> some protocols include a footer with additional error-checking information or for ensuring data integrity</li>
+            <br>
+        <img src="rr&p5.webp">
+        <h3>3. How Data is Broken into Packets</h3>
+        <p>When you send a large file or message over the internet, it is divided into multiple packets. Each packet can take a different route to reach its destination, depending on network conditions (such as congestion or failure). When packets arrive at the destination, they are reassembled in the correct order.</p>
+        <img src="rr&p6.jpeg">
+        
+        </ul>
+    </section>
     </body>
 </html>

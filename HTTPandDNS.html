@@ -1,15 +1,93 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>HTTPandDNS</title>
+        <title>HTTP & DNS</title>
+        <style>
+            body {
+                font-family: georgia; background-color:#8FBC8F;border: 2px dotted black;
+                padding:10px 10px 10px 10px; color: white
+                }
+
+            nav {
+                background-color:#FF7F50
+
+                }
+            h2 {
+             border: 2px dotted #FF7F50;
+                padding:15px 15px 15px 15px;   
+                }
+        </style>
     </head>
     <body>
-        <h1>This page contains information on Hypertext Transfer Protocol and the Domain Name System</h1>
+        <header>
+        <h1>Understanding HTTP and DNS</h1>
+        </header>
+        <nav>
+        <ul>
+        <li><a href="#dns">What is DNS? </a></li>
+        <li><a href="#http"> What is HTTP? </a></li>
+        <li><a href="#faq"> FAQ </a></li>
+        </ul>
+        </nav>
         <br><br><br>
         <a href = "https://aayao1.github.io/Internet/">
             <button>Home</button>
             </a>
+        <a href="RRandP.html">
+            <button>RR&P</button>
+        </a>
+        <a href="Internet.html">
+            <button>Internet</button>
+        </a>
         <br><br><br>
-        <img src="DNS.png">
+        <section id="dns">
+
+        <h2>What is DNS (Domain Name System)?</h2>
+        <p>The Domain Name System is like the phonebook of the internet. It converts human-readable domain names like <code>example.com</code> into IP addresses like <code>192.158.1.3</code>. Computers communicate using IP addresses, but humans use domain names because they are easier to remember.</p> 
+        <p>An important characteristic to note about DNS is that it's an open public communication protocol - for schools, the government, etc. This makes such an open network susceptible to cyber attacks such as DNS spoofing. (Safe websites prevent this by asking your web browser to communicate on a secure channel, using SSL and TLS.)</p>
+        <img src="DNS4.png">
+        <p>Whenever you type a URL in your browser, your computer asks the DNS server. When asked, the server is responsible for finding the correct IP address of that website - whether that DNS knows the address already, or has to ask other DNS servers.</p>
+        <h3>How DNS servers work together:</h3>
+        <ol>
+        <li>DNS servers are connected in a distributed hierarchy. The DNS hierarchy starts with ROOT DNS SERVERS at the highest level. There are 13 root server clusters worldwide, but they do not store the complete DNS records. </li>
+            <img src="DNS1.png" width=50%>
+            <br>
+        <li>Instead, they provide pointers to the next level in the hierarchy - TOP-LEVEL DOMAIN SERVERS (TLD name servers). </li>
+            <img src="DNS2.png">
+            <br>
+        <li>When your local DNS server asks the root server, it gets directed to the appropriate TLD name server (.org, .com, .net, etc.).</li>
+            <img src="DNS3.png">
+        </ol>
+        </section>
+        <section id="http">
+
+        <h2>What is HTTP (Hypertext Transfer Protocol)?</h2>
+        <p>HTTP stands for Hypertext Transfer Protocol. It's a protocol - which is an agreed upon standard for how data is sent around the internet. In this case, it is agreed that HTTP is in charge of transmitting web pages over the Internet.</p>
+        <h3>More detailed explanation of web browsing:</h3>
+        <ol>
+        <li><strong>User enters a URL</strong> (Uniform Resource Locator) into the web browser's address bar. A URL consists of a protocol (<code>http://</code> or <code>https://</code>), the domain name (<code>www.example.com</code>), and sometimes a path (e.g., <code>/about</code>).</li>
+        <img src="HTTP1.webp" width=30%>
+        <br>
+        <li><strong>Follows DNS protocol</strong> by translating the domain name into a machine-readable IP address (discussed in earlier section).</li>
+        <br>
+        <li><strong>Establishing a TCP Connection</strong> with the web server.</li>
+        <img src="HTTP2.jpg" width=30%>
+        <br>
+        <li><strong>HTTP request.</strong> Once the TCP connection is established, the browser sends a HTTP request (commonly GET or POST).</li>
+        <br>
+        <li><strong>HTTP response.</strong> The server processes the HTTP request and responds with an HTTP response.</li>
+        </ol>
+        </section>
+        <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <h3>Q: What is a cookie in HTTP?</h3>
+        <p><strong>A:</strong> A cookie is a small piece of data similar to an ID# stored by the browser and sent along with HTTP requests to the server. It's what websites use to remember who you are. </p>
+        <img src="HTTP3.png">
+        <br>
+        <h3>Q: What is the difference between HTTP, HTTPS, and HTML?</h3>
+        <p><strong>A:</strong> HTTP is a protocol used to transfer data across the web, but it's not secure. HTTPS is a secure version of HTTP - it ensures HTTP requests are secure and protected using encryption (SSL/TLS). HTML is the language used to tell a web browser how to make a page look. Thus, while HTTP/HTTPS handles how web data is transmitted (securely or not), HTML deals with what the data (the webpage) actually looks like and how it's structured.</p>
+        <img src="HTTP4.png">
+        </section>
+        
     </body>
 </html>
